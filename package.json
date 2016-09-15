@@ -2,11 +2,27 @@
   "name": "tacos",
   "version": "0.0.1",
   "private": true,
-  "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+  "devDependencies": {
+    "react-scripts": "0.4.1",
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.4.0",
+    "eslint-plugin-flowtype": "^2.15.0",
+    "eslint-plugin-jsx-a11y": "^2.2.1",
+    "eslint-plugin-react": "^6.2.0"
   },
   "dependencies": {
-    "react": "15.3.1",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
     "react-native": "0.33.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start-mobile": "node node_modules/react-native/local-cli/cli.js start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/react-scripts/config/eslint.js"
   }
 }
