@@ -7,6 +7,7 @@ import { createStore } from 'redux';
 import AppContainer from '../AppContainer';
 import AppHeader from '../AppHeader';
 import Sidenav from '../Sidenav';
+import RecipesPage from '../RecipesPage';
 
 import reducer from '../../reducers';
 
@@ -18,6 +19,7 @@ const App = () => {
             <AppContainer>
                 <Sidenav>
                     <AppHeader />
+                    <RecipesPage />
                 </Sidenav>
             </AppContainer>
         </Provider>

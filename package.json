@@ -57,15 +57,15 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "material-ui": "^0.15.4",
+    "ramda": "^0.22.1",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-native": "0.33.0",
-    "material-ui": "^0.15.4",
-    "node-uuid": "^1.4.7",
-    "ramda": "^0.22.1",
     "react-redux": "^4.4.5",
     "react-tap-event-plugin": "^1.0.0",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "uuid-js": "^0.7.5"
   },
   "scripts": {
     "start": "node scripts/start.js",

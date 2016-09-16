@@ -4,28 +4,28 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
+import Base from './CreateRecipe.base';
+
 type Props = {
     createRecipe: (name: string) => void
 }
 
-const onSubmit = (e, input, createRecipe) => {
-    e.preventDefault()
-    if (!input.value.trim()) {
-        return
+class CreateRecipe extends Base {
+    render() {
+        return (
+            <form
+                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem' }}
+                onSubmit={e => { e.preventDefault(); this.onSubmit(); } }
+                >
+                <TextField
+                    hintText={this.state.initial}
+                    value={this.state.name}
+                    onChange={event => this.setState({ name: event.target.value }) }
+                    />
+                <RaisedButton type="submit" label="Create" secondary={true} />
+            </form>
+        );
     }
-    createRecipe(input.value)
-    input.value = ''
-};
-
-const CreateRecipe = ({ createRecipe }: Props) => {
-    let input;
-    return (
-        <form style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem' }}
-            onSubmit={e => onSubmit(e, input, createRecipe)}>
-            <TextField hintText="New recipe" ref={node => { input = node.input } } />
-            <RaisedButton type="submit" label="Create" secondary={true} />
-        </form>
-    );
 }
 
 export default CreateRecipe;

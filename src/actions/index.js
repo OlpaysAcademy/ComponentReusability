@@ -1,6 +1,6 @@
 // @flow
 
-import uuid from 'node-uuid';
+import uuid from 'uuid-js';
 
 import type {
     CreateRecipe,
@@ -20,7 +20,7 @@ import type {
 export const createRecipe = (name: string): CreateRecipe => {
     return {
         type: 'CREATE_RECIPE',
-        id: uuid.v4(),
+        id: uuid.create(),
         name
     }
 }
@@ -28,7 +28,7 @@ export const createRecipe = (name: string): CreateRecipe => {
 export const createIngredient = (name: string): CreateIngredient => {
     return {
         type: 'CREATE_INGREDIENT',
-        id: uuid.v4(),
+        id: uuid.create(),
         name
     }
 }
